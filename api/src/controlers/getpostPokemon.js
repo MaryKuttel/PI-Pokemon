@@ -74,6 +74,7 @@ const allPokepos = async ()=>{
                 id: curr.id,
                 name: curr.name,
                 image: curr.image,
+                attack: curr.attack,
                 types: curr.types
             }
         })
@@ -84,6 +85,7 @@ const allPokepos = async ()=>{
                 id: curr.id,
                 name: curr.name,
                 image: curr.image,
+                attack: curr.attack,
                 types: curr.types
             }
         })
@@ -95,7 +97,7 @@ const allPokepos = async ()=>{
 
 const getPokeName = async (name)=>{
     let tuti = await allPokepos()
-
+    
     let pokeN = tuti.filter(curr => curr.name.toLowerCase() === name.toLowerCase())
     
     return pokeN
@@ -127,6 +129,7 @@ const subirPoke = async (name, height, weight, hp, attack, defense, speed, image
         id: traer.id,
         name: traer.name,
         image: traer.image,
+        attack: traer.attack,
         types: traer.types
     }
 
