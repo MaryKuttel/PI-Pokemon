@@ -20,6 +20,9 @@ export default function PokemonDetail(){
         <div>
             
                 <div>
+                    <h2>ID: {pokeDetID.id}</h2>
+                </div>
+                <div>
                     <h1>{pokeDetID.name}</h1>
                 </div>
 
@@ -33,7 +36,7 @@ export default function PokemonDetail(){
                     <h3>Defensa: {pokeDetID.defense}</h3>
                     <h3>Velocidad: {pokeDetID.speed}</h3>
                 </div>
-            
+                <br/>
             <Link to='/home'>
                 <button>Volver</button>
             </Link>

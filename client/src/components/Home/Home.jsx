@@ -23,7 +23,7 @@ export default function Home(){
 
     const [page, setPage] = useState(1)
 
-    const [pokePage, setPokePage] = useState(15)
+    const [pokePage, setPokePage] = useState(12)
 
     const indexLastPoke = page * pokePage
 
