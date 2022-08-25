@@ -31,21 +31,26 @@
    }
     #rawr img{
         position: relative;
-        height: 7rem;
-        width: 7rem;
+        height: 50%;
+        width: 50%;
         top: 2rem;
         left: 2.5rem;
     }
     #rawr h3{
         position: relative;
         top: 2.5rem;
-        left: 3rem;
-        background-color: rgba(27, 204, 133, 0.681);
+        left: 0rem;
+        /* background-color: rgba(27, 204, 133, 0.681); */
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        text-align: center;
     }
 
     #rawr h5{
         position: relative;
         top: 4rem;
-        left: 1.5rem;
-        background-color: rgba(3, 36, 168, 0.715);
+        left: 0rem;
+        /* background-color: rgba(3, 36, 168, 0.715); */
+        text-align: center;
     }

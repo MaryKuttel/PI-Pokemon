@@ -4,15 +4,19 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 99.9vh;
 
 }
 
 #contenedor{
+     backdrop-filter: blur(3px);
     background-color: rgba(0, 0, 0, 0.658);
     border-radius: 3rem;
     border-color: rgba(19, 255, 133, 0.584);
     border-style: double;
     border-width: 0.7rem;
+    
+    
 }
 
     #cartas{

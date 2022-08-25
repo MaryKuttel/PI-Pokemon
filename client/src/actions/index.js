@@ -95,3 +95,10 @@ export function creApiFilt(payload){
         payload
     }
 }
+
+export function setCurrentPage(payload){
+    return{
+        type: "CURR_PAGE",
+        payload
+    }
+}

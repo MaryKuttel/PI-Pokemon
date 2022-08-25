@@ -5,7 +5,8 @@ const initialState = {
     allPokemons: [],
     pokeDet: [],
     types: [],
-    loader: true
+    loader: true,
+    currPage: 1
 }
 
 
@@ -101,6 +102,11 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 pokemons: action.payload === 'allPoke'? state.allPokemons : action.payload === 'dbPoke' ? auxFilter.filter(curr => isNaN(curr.id)) : auxFilter.filter(curr => !isNaN(curr.id))
+            }
+        case "CURR_PAGE":
+            return{
+                ...state,
+                currPage: action.payload
             }
         default:
             return state

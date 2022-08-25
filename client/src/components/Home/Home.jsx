@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { Link } from "react-router-dom";
-import { getPokemons, typeFilter, filterAtta, orderAZ, creApiFilt, getTypes } from "../../actions";
+import { getPokemons, typeFilter, filterAtta, orderAZ, creApiFilt, getTypes, setCurrentPage } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../NavBar/SearchBar";
 import Paginado from "../Paginado/Paginado";
@@ -53,7 +53,9 @@ export default function Home(){
 
     //Paginado
 
-    const [page, setPage] = useState(1)
+    // const [page, setPage] = useState(1)
+
+    const page = useSelector((state)=> state.currPage)
 
     const [pokePage, setPokePage] = useState(12)
 
@@ -63,9 +65,10 @@ export default function Home(){
 
     const currPoke = allPokes.slice(indexFirstPoke, indexLastPoke)
 
-    const paginado = (pageNum) =>{
-    setPage(pageNum)
-    }
+    // const paginado = (pageNum) =>{
+    // // setPage(pageNum)
+    // dispatch(setCurrentPage(pageNum))
+    // }
 
     //
 
@@ -81,41 +84,45 @@ export default function Home(){
     
         e.preventDefault()
         dispatch(getPokemons())
-        setPage(1)
+        dispatch(setCurrentPage(1))
     
     }
 
     function handleTypesFilt(e){
         // e.preventDefault()
         dispatch(typeFilter(e.target.value))
-        setPage(1)
+        dispatch(setCurrentPage(1))
     }
 
     function handleAttack(e){
         dispatch(filterAtta(e.target.value))
         setModifier(e.target.value)
-        setPage(1)
+        dispatch(setCurrentPage(1))
     }
 
 
     function handleOrderAZ(e){
         dispatch(orderAZ(e.target.value))
-        setPage(1)
+        dispatch(setCurrentPage(1))
     }
 
 
     function handleCreApi(e){
         dispatch(creApiFilt(e.target.value))
-        setPage(1)
+        dispatch(setCurrentPage(1))
     }
 
     return loader? <Loading/> : (
         <>
         <div id={'home'}>
             <NavBar/>
+            <br/>
             <SearchBar/>
+            <br/>
             <button onClick={(e) => {handleOnClick(e)}}>Recargar</button>
+            <br/>
             <div>
+            <br/>
                 <select onChange={(e) => handleOrderAZ(e)}>
                     <option value={'asc'}>A-Z</option>
                     <option value={'desc'}>Z-A</option>
@@ -166,11 +173,11 @@ export default function Home(){
                 }
                 
             </select> 
-
             </div>
+            <br/>
+            <br/>
             <Paginado pokePage={pokePage}
-            allPokes={allPokes.length}
-            paginado={paginado}></Paginado>
+            allPokes={allPokes.length}></Paginado>
            <br/>
            <br/>
            <div id={'contenedor'}>
