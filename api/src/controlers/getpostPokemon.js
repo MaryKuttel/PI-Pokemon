@@ -8,7 +8,7 @@ let aux2 = "black-white";
 
 const getPokemonsApi = async ()=>{
     
-    let pokeApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=5")
+    let pokeApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40")
                     .then(response => response.data.results)
     let urlPoke = pokeApi.map(curr => curr.url)
     let truePokeApi = await axios.all(urlPoke.map( async (url) =>{

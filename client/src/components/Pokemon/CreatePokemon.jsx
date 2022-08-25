@@ -4,75 +4,92 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTypes, createPoke} from '../../actions'
 import { Link, useHistory } from 'react-router-dom';
 
-const validaciones = (pokeValidar)=>{
 
-    let validError = {}
+// const validaciones = (pokeValidar)=>{
 
-    if(!pokeValidar.name){
-        validError.name = "¡Ponle un nombre bonito!"
-    } else{
-       
-    }
-    if(!pokeValidar.attack){
-        validError.attack = '¡Todo gran pokemon necesita saber su potencial!'
-    }else{
-        if(pokeValidar.attack > 255){
-            validError.attack = "¡El ataque no puede superar los 255!"
-        } else if(pokeValidar.attack < 1){
-            validError.attack = '¿Cómo sería un Pokemon con ataque negativo? ¡No harías daño!'
-        }
-    }
-    if(!pokeValidar.defense){
-        validError.defense = '¡Todo gran pokemon necesita saber su potencial!'
-    }else{
-        if(pokeValidar.defense > 255){
-            validError.defense = "¡La defensa no puede superar los 255!"
-        } else if(pokeValidar.defense < 1){
-            validError.defense = '¡Pobrecito lo estas haciendo de papel!'
-        }
+//     let validError = {}
+
+//     if(!pokeValidar.name){
+//         validError.name = "¡Ponle un nombre bonito!"
+//     } else{
+//        if(/\s/.test(pokeValidar.name)){
+//         validError.name = '¡No se permiten espacios!'
+//        }
+//        if(/[0-9]/.test(pokeValidar.name)){
+//         validError.name = "¡Solo letras por favor!"
+//        }
+//        if(/\W/.test(pokeValidar.name)){
+//         validError.name = '¡No se permiten carácteres especiales!'
+//        }
+//     }
+//     if(!pokeValidar.attack){
+//         validError.attack = '¡Todo gran pokemon necesita saber su potencial!'
+//     }else{
+//         if(pokeValidar.attack > 255){
+//             validError.attack = "¡El ataque no puede superar los 255!"
+//         } else if(pokeValidar.attack < 1){
+//             validError.attack = '¿Cómo sería un Pokemon con ataque negativo? ¡No harías daño!'
+//         }
+//     }
+//     if(!pokeValidar.defense){
+//         validError.defense = '¡Todo gran pokemon necesita saber su potencial!'
+//     }else{
+//         if(pokeValidar.defense > 255){
+//             validError.defense = "¡La defensa no puede superar los 255!"
+//         } else if(pokeValidar.defense < 1){
+//             validError.defense = '¡Pobrecito lo estas haciendo de papel!'
+//         }
         
-    }
-    if(!pokeValidar.speed){
-        validError.speed = '¡Todo gran pokemon necesita saber su potencial!'
-    }else{
-        if(pokeValidar.speed > 255){
-            validError.speed = "¡La velocidad no puede superar los 255!"
-        } else if(pokeValidar.speed < 1){
-            validError.speed = 'Más lento que vos entendiendo que no podes tener el amor de ella :,V'
-        }
+//     }
+//     if(!pokeValidar.speed){
+//         validError.speed = '¡Todo gran pokemon necesita saber su potencial!'
+//     }else{
+//         if(pokeValidar.speed > 255){
+//             validError.speed = "¡La velocidad no puede superar los 255!"
+//         } else if(pokeValidar.speed < 1){
+//             validError.speed = 'Más lento que vos entendiendo que no podes tener el amor de ella :,V'
+//         }
  
-    }
-    if(!pokeValidar.hp){
-        validError.hp = '¡Todo gran pokemon necesita saber su potencial!'
-    }else{
-        if(pokeValidar.hp > 255){
-            validError.hp = "¡La vida no puede superar los 255!"
-        } else if(pokeValidar.hp < 1){
-            validError.hp = '¿Estas haciendo un muerto?'
-        }
-    }
-    if(!pokeValidar.height){
-        validError.height = '¿Ta chiquito o ta grandecito?'
-    }else{
-        
-    }
-    if(!pokeValidar.weight){
-        validError.weight = '¡Un pokemon pesaba 1000kg! ¿Y el tuyo?'
-    }else{
-        
-    }
-    if(pokeValidar.image){
-        if (!/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/.test(pokeValidar.image)){
-            validError.image = '¡La imagen tiene que ser una URL!'
-        }
+//     }
+//     if(!pokeValidar.hp){
+//         validError.hp = '¡Todo gran pokemon necesita saber su potencial!'
+//     }else{
+//         if(pokeValidar.hp > 255){
+//             validError.hp = "¡La vida no puede superar los 255!"
+//         } else if(pokeValidar.hp < 1){
+//             validError.hp = '¿Estas haciendo un muerto?'
+//         }
+//     }
+//     if(!pokeValidar.height){
+//         validError.height = '¿Ta chiquito o ta grandecito?'
+//     }else{
+//         if(pokeValidar.height > 40){
+//             validError.height = "Woooow espera espera ¿qué tratas de crear?"
+//         } else if(pokeValidar.height < 1){
+//             validError.height = '¿Absorbido por un agujero negro o carencia de existencia?'
+//         }
+//     }
+//     if(!pokeValidar.weight){
+//         validError.weight = '¡Un pokemon pesaba 1000kg! ¿Y el tuyo?'
+//     }else{
+//         if(pokeValidar.weight > 1000){
+//             validError.weight = "¡¿Queriendo generar competencia?! Nao nao, menos peso más altura"
+//         } else if(pokeValidar.weight < 1){
+//             validError.weight = '¿Absorbido por un agujero negro o carencia de existencia?'
+//         }
+//     }
+//     if(pokeValidar.image){
+//         if (!/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/.test(pokeValidar.image)){
+//             validError.image = 'El link de la imagen debe ser una URL'
+//         }
 
-    }else{
-        
-    }
+//     }
+//     if(pokeValidar.types.length === 0 || pokeValidar.types.length > 2){
+//         validError.types = 'Pon hasta un máximo de dos tipos'
+//     }
     
-
-    return validError
-}
+//     return validError
+// }
 
 
 export default function CreatePokemon(){
@@ -93,7 +110,10 @@ export default function CreatePokemon(){
 
     const tipos = useSelector(state => state.types)
 
+
     let [error, setError] = useState({})
+
+    let [disEna, setDisEna] = useState(false)
 
     useEffect(()=>{
         dispatch(getTypes())
@@ -101,38 +121,165 @@ export default function CreatePokemon(){
 
 
     const handleOnChange= (e)=>{
+
         setInput({...input, [e.target.name]: e.target.value});
-        setError(
-            validaciones({...input, [e.target.name]: e.target.value})
-        );
+        // setError(
+        //     validaciones({...input, [e.target.name]: e.target.value})
+        // );
+
+        // handleDisable(validaciones({...input, [e.target.name]: e.target.value}))
+
+        validaciones({...input, [e.target.name]: e.target.value})
+        
     }
 
     const handleSubmit = (e)=> {
         e.preventDefault()
-        dispatch(createPoke(input))
-        
-        setInput({
-            name: '',
-            hp: '',
-            attack: '',
-            defense: '',
-            speed: '',
-            height: '',
-            weight: '',
-            image: '',
-            types: []
-           
-        })
+            
+            dispatch(createPoke(input))
+            
+            setInput({
+                name: '',
+                hp: '',
+                attack: '',
+                defense: '',
+                speed: '',
+                height: '',
+                weight: '',
+                image: '',
+                types: []
+               
+            })
 
     }
 
     const handleTypes = (e) =>{
         if(!input.types.includes(e.target.value)){
             setInput({...input, types: [...input.types, e.target.value]})
+            // setError(
+            //     validaciones({...input, types: [input.types, e.target.value]})
+            // );
+    
+            // handleDisable(validaciones({...input, types: [input.types, e.target.value]}))
+            validaciones({...input, types: [...input.types, e.target.value]})
+        }else{
+            alert("El tipo ya fue seleccionado.")
         }
     }
 
-    return (
+    const validaciones = (pokeValidar)=>{
+
+        let validError = {}
+    
+        if(!pokeValidar.name){
+            validError.name = "¡Ponle un nombre bonito!"
+        } else{
+           if(/\s/.test(pokeValidar.name)){
+            validError.name = '¡No se permiten espacios!'
+           }
+           if(/[0-9]/.test(pokeValidar.name)){
+            validError.name = "¡Solo letras por favor!"
+           }
+           if(/\W/.test(pokeValidar.name)){
+            validError.name = '¡No se permiten carácteres especiales!'
+           }
+        }
+        if(!pokeValidar.attack){
+            validError.attack = '¡Todo gran pokemon necesita saber su potencial!'
+        }else{
+            if(pokeValidar.attack > 255){
+                validError.attack = "¡El ataque no puede superar los 255!"
+            } else if(pokeValidar.attack < 1){
+                validError.attack = '¿Cómo sería un Pokemon con ataque negativo? ¡No harías daño!'
+            }
+        }
+        if(!pokeValidar.defense){
+            validError.defense = '¡Todo gran pokemon necesita saber su potencial!'
+        }else{
+            if(pokeValidar.defense > 255){
+                validError.defense = "¡La defensa no puede superar los 255!"
+            } else if(pokeValidar.defense < 1){
+                validError.defense = '¡Pobrecito lo estas haciendo de papel!'
+            }
+            
+        }
+        if(!pokeValidar.speed){
+            validError.speed = '¡Todo gran pokemon necesita saber su potencial!'
+        }else{
+            if(pokeValidar.speed > 255){
+                validError.speed = "¡La velocidad no puede superar los 255!"
+            } else if(pokeValidar.speed < 1){
+                validError.speed = 'Más lento que vos entendiendo que no podes tener el amor de ella :,V'
+            }
+     
+        }
+        if(!pokeValidar.hp){
+            validError.hp = '¡Todo gran pokemon necesita saber su potencial!'
+        }else{
+            if(pokeValidar.hp > 255){
+                validError.hp = "¡La vida no puede superar los 255!"
+            } else if(pokeValidar.hp < 1){
+                validError.hp = '¿Estas haciendo un muerto?'
+            }
+        }
+        if(!pokeValidar.height){
+            validError.height = '¿Ta chiquito o ta grandecito?'
+        }else{
+            if(pokeValidar.height > 40){
+                validError.height = "Woooow espera espera ¿qué tratas de crear?"
+            } else if(pokeValidar.height < 1){
+                validError.height = '¿Absorbido por un agujero negro o carencia de existencia?'
+            }
+        }
+        if(!pokeValidar.weight){
+            validError.weight = '¡Un pokemon pesaba 1000kg! ¿Y el tuyo?'
+        }else{
+            if(pokeValidar.weight > 1000){
+                validError.weight = "¡¿Queriendo generar competencia?! Nao nao, menos peso más altura"
+            } else if(pokeValidar.weight < 1){
+                validError.weight = '¿Absorbido por un agujero negro o carencia de existencia?'
+            }
+        }
+        if(pokeValidar.image){
+            if (!/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/.test(pokeValidar.image)){
+                validError.image = 'El link de la imagen debe ser una URL'
+            }
+    
+        }
+        if(pokeValidar.types.length === 0 || pokeValidar.types.length > 2){
+            validError.types = 'Pon hasta un máximo de dos tipos'
+        }
+        
+        setError(validError)
+        handleDisable(validError)
+    }
+
+    const handleDisable = (error)=>{
+
+        // if(!error.name && !error.attack && !error.image && !error.defense && !error.height && !error.weight && !error.speed && !error.hp){
+        //     setDisEna(true)
+        // }
+        // else{
+        //     setDisEna(false)
+        // }
+
+       if(error?.name === undefined &&
+        error?.attack === undefined &&
+        error?.defense === undefined &&
+        error?.speed === undefined &&
+        error?.hp === undefined &&
+        error?.height === undefined &&
+        error?.weight === undefined &&
+        error?.types === undefined
+        ){
+            setDisEna(true)
+       }else{
+        setDisEna(false)
+       }
+
+    }
+
+    return(
         <div>
             <h3>¡CREA TU PROPIO POKEMON!</h3>
             <br/>
@@ -175,7 +322,7 @@ export default function CreatePokemon(){
             <br/>
             <div>
                 <label>Altura: </label>
-                <label><input type={'number'} placeholder={'Ej: 45'} name={'height'} value={input.height} onChange={ (e) => handleOnChange(e)}/> m </label>
+                <label><input type={'number'} placeholder={'Ej: 16'} name={'height'} value={input.height} onChange={ (e) => handleOnChange(e)}/> m </label>
                 <p>{error.height}</p>
             </div>
             <br/>
@@ -200,7 +347,7 @@ export default function CreatePokemon(){
             </div>
             <br/>
             <br/>
-            <button type={'submit'}>Crear Pokemon</button>
+            <button disabled={!disEna && "disabled"} type={'submit'}>Crear Pokemon</button>
         </form>
         <br/>
         <div>

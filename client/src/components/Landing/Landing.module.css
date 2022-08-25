@@ -4,10 +4,89 @@
     /* background-image: url('https://w0.peakpx.com/wallpaper/1013/553/HD-wallpaper-pokemon-red-pokemon-pikachu.jpg'); */
     /* background-image: url('https://w0.peakpx.com/wallpaper/359/879/HD-wallpaper-pokemon-eevee-pokemon-eeveelutions-espeon-pokemon-flareon-pokemon-jolteon-pokemon-leafeon-pokemon-sylveon-pokemon-umbreon-pokemon-vaporeon-pokemon.jpg'); */
     /* background-image: url('https://w0.peakpx.com/wallpaper/293/155/HD-wallpaper-pokemon-pokemons.jpg'); */
-    height: 99.3vh;
+    height: 99.9vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    border-style: solid;
+}
+
+.pokeTit{
+    position: relative;
+    top: 180px;
+    color: #00b831;
+    text-transform: capitalize;
+    margin-left: 10%;
+    text-decoration-color: rgba(30, 167, 2, 0.803);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    text-shadow: 5px -5px 10px rgb(8, 199, 141);
+   
+}
+
+.pokemon{
+    position: relative;
+    color: #00b831;
+    text-transform: uppercase;
+    display: flex;
+    margin-left: 65%;
+    top: 20rem;
+    text-decoration-color: rgba(30, 173, 1, 0.803);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    text-shadow: 5px -5px 10px rgb(8, 199, 141);
+}
+
+.pokeButton {
+  align-items: center;
+  background-image: linear-gradient(144deg,#078827, #13ceb8 50%,#0453ca);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(24, 87, 214, 0.353) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #099502;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  top: 30rem;
+  left: 43rem;
+}
+
+.pokeButton:active,
+.pokeButton:hover {
+  outline: 0;
+}
+
+.pokeButton span {
+  background-color: rgb(16, 32, 11);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.pokeButton:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .pokeButton {
+    font-size: 20px;
+    min-width: 10rem;
+  }
 }

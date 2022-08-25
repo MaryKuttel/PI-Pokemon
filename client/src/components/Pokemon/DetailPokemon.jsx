@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useEffect } from "react";
 import { getDetailsPoke} from "../../actions";
 import { Link, useParams } from 'react-router-dom'
+import Loading from '../Loading/Loading'
 
 
 export default function PokemonDetail(){
@@ -10,13 +11,15 @@ export default function PokemonDetail(){
     const dispacth = useDispatch();
     const {id} = useParams()
 
+    const loader = useSelector((state) => state.loader)
+
     useEffect(()=>{
         dispacth(getDetailsPoke(id))
     }, [dispacth, id])
 
     const pokeDetID = useSelector((state)=> state.pokeDet)
 
-    return(
+    return loader? <Loading/> :(
         <div>
             
                 <div>

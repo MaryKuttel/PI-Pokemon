@@ -1,4 +1,5 @@
 import React from "react";
+import './Paginado.css'
 
 
 export default function Paginado({pokePage, allPokes, paginado}){
@@ -11,11 +12,11 @@ export default function Paginado({pokePage, allPokes, paginado}){
 
     return(
 
-        <nav>
-            <ul>
+        <nav >
+            <ul id={'paginado'}>
                 {numPage && numPage.map(number => (
                     <li className="number" key={number}>
-                    <a onClick={()=> paginado(number)}>{number}</a>
+                    <a id={'buttonP'} onClick={()=> paginado(number)}>{number}</a>
                     </li>
                 ))}
             </ul>
