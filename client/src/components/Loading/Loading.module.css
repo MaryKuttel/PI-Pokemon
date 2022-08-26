@@ -3,8 +3,8 @@
     /* 'https://i.pinimg.com/originals/4e/a2/3e/4ea23e6339937b95a8aa5cd08eeb3266.gif' */
     background-image: url('https://media4.giphy.com/media/IQebREsGFRXmo/giphy.gif?cid=790b76115ac1168c1dd6c69bf28983a0a110267744462fcd&rid=giphy.gif&ct=s');
     height: 100vh;
-    background-position: center;
+    background-position: 40rem 5rem;
     background-repeat: no-repeat;
-    background-size: 40vh;
+    background-size: 30vh;
     background-attachment: fixed;
 }

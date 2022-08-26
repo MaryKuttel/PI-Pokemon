@@ -102,3 +102,11 @@ export function setCurrentPage(payload){
         payload
     }
 }
+
+
+// export function stablePage(payload){
+//     return{
+//         type: 'SET_PAGE',
+//         payload
+//     }
+// }

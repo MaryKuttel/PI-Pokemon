@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getTypes, createPoke} from '../../actions'
 import { Link, useHistory } from 'react-router-dom';
+import CardTypes from './CardTypes';
+import './CreatePokemon.css'
 
 
 // const validaciones = (pokeValidar)=>{
@@ -94,6 +96,8 @@ import { Link, useHistory } from 'react-router-dom';
 
 export default function CreatePokemon(){
 
+    const history = useHistory()
+
     let [input, setInput] = useState({
         name: '',
         hp: '',
@@ -150,11 +154,14 @@ export default function CreatePokemon(){
                 types: []
                
             })
+        alert("¡Pokemon creado con Éxito!")
+        history.push('/home')
 
     }
 
     const handleTypes = (e) =>{
         if(!input.types.includes(e.target.value)){
+            
             setInput({...input, types: [...input.types, e.target.value]})
             // setError(
             //     validaciones({...input, types: [input.types, e.target.value]})
@@ -162,6 +169,7 @@ export default function CreatePokemon(){
     
             // handleDisable(validaciones({...input, types: [input.types, e.target.value]}))
             validaciones({...input, types: [...input.types, e.target.value]})
+        
         }else{
             alert("El tipo ya fue seleccionado.")
         }
@@ -245,6 +253,13 @@ export default function CreatePokemon(){
                 validError.image = 'El link de la imagen debe ser una URL'
             }
     
+        }else{
+            let arrImage = ['https://static3.srcdn.com/wordpress/wp-content/uploads/2021/08/Pok--mon-Fakemon-Tofrug.jpg', 'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/186240451/original/9251d84e9bb6b767fde90d5edae11beebee55778.png', 'http://pre03.deviantart.net/133d/th/pre/i/2014/109/8/f/_____incikhtes_by_smiley_fakemon-d7f4mv8.png','https://acortar.link/OlryH1', 'https://acortar.link/iPjII6']
+
+            let setIndex = Math.round(Math.random() * 4)
+
+            pokeValidar.image = arrImage[setIndex]
+
         }
         if(pokeValidar.types.length === 0 || pokeValidar.types.length > 2){
             validError.types = 'Pon hasta un máximo de dos tipos'
@@ -279,8 +294,9 @@ export default function CreatePokemon(){
 
     }
 
+
     return(
-        <div>
+        <div id={'create'}>
             <h3>¡CREA TU PROPIO POKEMON!</h3>
             <br/>
         <form onSubmit={ e => handleSubmit(e)}>
@@ -343,6 +359,18 @@ export default function CreatePokemon(){
                         })
                     }
                 </select>
+                <div>
+                    <div>
+                        {
+                        input.types?.map(curr => {
+                            return(
+                                <CardTypes key={curr} idT={curr} nameT={tipos[curr - 1].name} input={input} set={setInput} validador={validaciones}/>
+                            )
+                        })
+                        
+                        }
+                    </div>
+                </div>
                 <p>{error.types}</p>
             </div>
             <br/>

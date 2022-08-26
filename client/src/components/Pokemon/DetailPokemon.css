@@ -1,0 +1,14 @@
+#divContainer{
+
+    display: flex;
+    background-color: rgba(22, 6, 101, 0.753);
+    backdrop-filter: blur(2px);
+    border-style: double;
+    border-width: 0.5rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-top: 5rem;
+    border-color: rgba(5, 175, 90, 0.762);
+    color: rgb(216, 207, 207);
+
+}

@@ -119,10 +119,9 @@ export default function Home(){
             <br/>
             <SearchBar/>
             <br/>
-            <button onClick={(e) => {handleOnClick(e)}}>Recargar</button>
-            <br/>
             <div>
-            <br/>
+                <button onClick={(e) => {handleOnClick(e)}}>Recargar</button>
+                
                 <select onChange={(e) => handleOrderAZ(e)}>
                     <option value={'asc'}>A-Z</option>
                     <option value={'desc'}>Z-A</option>
@@ -185,8 +184,8 @@ export default function Home(){
             {
                currPoke?.map(cur => {
                     return (
-                    <div key={cur.id}>
-                        <Link to={'/pokemons/' + cur.id}>
+                    <div key={cur.id} >
+                        <Link to={'/pokemons/' + cur.id} id={'non-line'}>
                         <PokeCard name={cur.name} image={cur.image} types= {cur.types.join(' - ')}/>
                         </Link>
                     </div>

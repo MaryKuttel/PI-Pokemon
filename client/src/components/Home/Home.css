@@ -27,6 +27,10 @@
         grid-row-gap: 20px;
         position: relative;
         top: -1.8rem;
+    }
+
+#non-line{
+    text-decoration: none;
 }
 
 

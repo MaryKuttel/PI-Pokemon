@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPokeName } from "../../actions";
-
+import './SearchBar.css'
 
 export default function SearchBar(){
 
@@ -22,9 +22,10 @@ export default function SearchBar(){
 
 
     return(
-        <div>
+        <div id={'searchBar'}>
 
         <input 
+        id={'inputSearch'}
         type='text' 
         placeholder="Por ejemplo: bulbasaur"
         onChange={(e)=> handleOnChange(e)}

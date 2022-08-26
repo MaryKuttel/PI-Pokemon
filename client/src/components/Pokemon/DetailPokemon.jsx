@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { getDetailsPoke} from "../../actions";
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
+import './DetailPokemon.css'
 
 
 export default function PokemonDetail(){
@@ -20,7 +21,7 @@ export default function PokemonDetail(){
     const pokeDetID = useSelector((state)=> state.pokeDet)
 
     return loader? <Loading/> :(
-        <div>
+        <div id={'divContainer'}>
             
                 <div>
                     <h2>ID: {pokeDetID.id}</h2>
