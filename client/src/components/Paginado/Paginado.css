@@ -1,3 +1,25 @@
+#pag_div_externo{
+    /* background-color: rgba(255, 0, 0, 0.992); */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 8rem;
+    width: 91rem;
+    margin-bottom: -5rem;
+}
+
+
+#pag_div_botones{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: #072fdf; */
+    height: 5rem;
+    width: 28rem;
+}
+
+
+
 #paginado{
     display: grid;
     grid-template-columns: repeat(100, 0.03fr);
@@ -79,26 +101,33 @@
 }
 
 #prevB{
-
-  display: flex;
+  
+  /* display: flex; */
   font-size: 10px;
   text-transform: uppercase;
   width: 4rem;
   height: 1.5rem;
-  margin-left: 33rem;
-  margin-top: 0.5rem;
+  /* margin-left: 33rem;
+  margin-top: 0.5rem; */
   cursor: pointer;
+  border-radius: 1rem;
   /* background-color: #00000098;
   border-color:#c3bfbf;
   color: #fff; */
 
 }
 
+#prevB img{
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
 #textP{
   display: flex;
   color:rgb(255, 255, 255);
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.893);
-  margin-left: 47rem;
+  /* margin-left: 47rem; */
   font-size: 14px;
   text-transform: capitalize;
 }

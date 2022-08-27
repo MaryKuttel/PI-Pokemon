@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getPokeName } from "../../actions";
+import { getPokeName, setCurrentPage } from "../../actions";
 import './SearchBar.css'
 
 export default function SearchBar(){
@@ -18,6 +18,7 @@ export default function SearchBar(){
     const handleSubmit = (e)=>{
         e.preventDefault()
         dispacth(getPokeName(name))
+        dispacth(setCurrentPage(1))
     }
 
 
