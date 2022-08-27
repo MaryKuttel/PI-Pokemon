@@ -4,18 +4,19 @@
     justify-content: center;
     align-items: flex-start;
     height: 8rem;
-    width: 91rem;
+    width: 94.4rem;
     margin-bottom: -5rem;
+    margin-top: -3rem;
 }
 
 
 #pag_div_botones{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: center;
     /* background-color: #072fdf; */
-    height: 5rem;
-    width: 28rem;
+    height: 3rem;
+    width: 26rem;
 }
 
 

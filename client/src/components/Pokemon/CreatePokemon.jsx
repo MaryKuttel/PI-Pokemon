@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getTypes, createPoke} from '../../actions'
+import { getTypes, createPoke, setCurrentPage} from '../../actions'
 import { Link, useHistory } from 'react-router-dom';
 import CardTypes from './CardTypes';
 import './CreatePokemon.css'
@@ -154,6 +154,7 @@ export default function CreatePokemon(){
                 types: []
                
             })
+            dispatch(setCurrentPage(1))
         alert("¡Pokemon creado con Éxito!")
         history.push('/home')
 

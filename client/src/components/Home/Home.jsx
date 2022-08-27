@@ -119,8 +119,9 @@ export default function Home(){
             <br/>
             <SearchBar/>
             <br/>
-            <div>
-                <button onClick={(e) => {handleOnClick(e)}}>Recargar</button>
+            <div id={'div_externo_selectores'}>
+                <div id={'div_interno_selectores'}>
+                    <button onClick={(e) => {handleOnClick(e)}} id={'button_recarga'}>Recargar</button>
                 
                 <select onChange={(e) => handleOrderAZ(e)}>
                     <option value={'asc'}>A-Z</option>
@@ -172,6 +173,7 @@ export default function Home(){
                 }
                 
             </select> 
+                </div>
             </div>
             <br/>
             <br/>

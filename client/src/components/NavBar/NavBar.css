@@ -1,4 +1,31 @@
-#navBar{
-    background-color: rgba(15, 76, 2, 0.603);
+#div_externo_navBar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: none;
+    background-color: rgba(0, 6, 2, 0.736);
+    height: 5rem;
+    border-width: 0.5rem;
+    border-radius: 1rem;
+    border-style:double;
+    border-color: rgba(0, 86, 152, 0.896);
+    backdrop-filter: blur(1px);
+ 
+}
+
+#div_interno_navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(4, 172, 60, 0.736); */
+    width: 18rem;
+}
+
+#navBar_text{
+
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
     color: #fff;
+
 }

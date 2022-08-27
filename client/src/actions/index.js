@@ -8,7 +8,8 @@ export const FILTER_ATTACK = 'FILTER_ATTACK';
 export const CREATE_POKEMON = 'CREATE_POKEMON';
 export const GET_TYPES = 'GET_TYPES';
 export const ORDER_AZ = 'ORDER_AZ';
-export const FILTER_API_DB = 'FILTER_API_DB'
+export const FILTER_API_DB = 'FILTER_API_DB';
+export const RESET_DETAIL = 'RESET_DETAIL'
 
 
 
@@ -103,7 +104,12 @@ export function setCurrentPage(payload){
     }
 }
 
-
+export function resetDetail(){
+    return{
+        type: 'RESET_DETAIL',
+        payload: []
+    }
+}
 // export function stablePage(payload){
 //     return{
 //         type: 'SET_PAGE',

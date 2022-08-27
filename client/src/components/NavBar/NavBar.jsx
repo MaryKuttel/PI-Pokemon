@@ -5,8 +5,12 @@ import './NavBar.css'
 
 export default function NavBar(){
     return(
-        <nav>
-            <NavLink to={'/create'} id={'navBar'}>CREAR POKEMON</NavLink>
-        </nav>
+        <div id={'div_externo_navBar'}>
+            <div id={'div_interno_navBar'}>
+                <nav>
+                    <NavLink to={'/create'} id={'navBar_text'}>Crear Pokemon</NavLink>
+                </nav>
+            </div>
+        </div>
     )
 }
