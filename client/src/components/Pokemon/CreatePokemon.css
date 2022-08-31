@@ -1,3 +1,63 @@
-#create{
-    background-color: rgb(255, 255, 255);
+#div_externo_create{
+    display: flex;
+    /* background-color: rgb(255, 255, 255); */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_interno_create{
+    background-color: rgba(0, 0, 0, 0.575);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4rem;
+    border-style: double;
+    border-width: 1rem;
+    border-color: rgba(0, 42, 179, 0.806);
+    height: 45rem;
+    width: 80rem;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 255)
+}
+
+#div_interno_create h3{
+    color: rgb(255, 255, 255);
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: -1.6rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    
+}
+
+#formulario{
+    background-color: rgb(15, 106, 1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    height: 40rem;
+    width: 80rem;
+}
+
+#datos_poke1{
+    background-color: brown;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    height: 20rem;
+    width: 20rem;
+
+}
+
+
+#datos_poke2{
+    background-color: rgb(255, 50, 231);
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    height: 20rem;
+    width: 20rem;
 }

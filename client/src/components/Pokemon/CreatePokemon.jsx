@@ -297,58 +297,63 @@ export default function CreatePokemon(){
 
 
     return(
-        <div id={'create'}>
-            <h3>¡CREA TU PROPIO POKEMON!</h3>
+        <div id={'div_externo_create'}>
+        <div id={'div_interno_create'}>
+            <h3>¡Crea tu Pokemon!</h3>
             <br/>
-        <form onSubmit={ e => handleSubmit(e)}>
-            <div>
+        <form onSubmit={ e => handleSubmit(e)} id={'formulario'}>
+            <div id={'datos_poke1'}>
                 <label>Nombre: </label>
                 <input type={'text'} placeholder={'Ej: chicapu'} name={'name'} value={input.name} onChange={ (e) => handleOnChange(e)}/>
                 <p>{error.name}</p>
-            </div>
             <br/>
-            <div>
                 <label>Ataque: </label>
-                <input type={'number'} placeholder={'Ej: 40'} name={'attack'} value={input.attack} onChange={ (e) => handleOnChange(e)}/>
-                <p>{error.attack}</p>
-            </div>
+                {/* <input type={'number'} placeholder={'Ej: 40'} name={'attack'} value={input.attack} onChange={ (e) => handleOnChange(e)}/> */}
+                <input type={'range'} min='1' max='255' name={'attack'} value={input.attack} onChange={ (e) => handleOnChange(e)}/>
+                <p>{input.attack}</p>
+                {/* <p>{error.attack}</p> */}
             <br/>
-            <div>
+
                 <label>Defensa: </label>
-                <input type={'number'} placeholder={'Ej: 65'} name={'defense'} value={input.defense} onChange={ (e) => handleOnChange(e)}/>
-                <p>{error.defense}</p>
-            </div>
+                {/* <input type={'number'} placeholder={'Ej: 65'} name={'defense'} value={input.defense} onChange={ (e) => handleOnChange(e)}/> */}
+                <input type={'range'} min='1' max='255' name={'defense'} value={input.defense} onChange={ (e) => handleOnChange(e)}/>
+                <p>{input.defense}</p>
+                {/* <p>{error.defense}</p> */}
+
             <br/>
-            <div>
-                <label>Vida: </label>
-                <input type={'number'} placeholder={'Ej: 70'} name={'hp'} value={input.hp} onChange={ (e) => handleOnChange(e)}/>
-                <p>{error.hp}</p>
-            </div>
-            <br/>
-            <div>
+
                 <label>Velocidad: </label>
-                <input type={'number'} placeholder={'Ej: 55'} name={'speed'} value={input.speed} onChange={ (e) => handleOnChange(e)}/>
-                <p>{error.speed}</p>
-            </div>
+                {/* <input type={'number'} placeholder={'Ej: 55'} name={'speed'} value={input.speed} onChange={ (e) => handleOnChange(e)}/> */}
+                <input type={'range'} min='1' max='255' name={'speed'} value={input.speed} onChange={ (e) => handleOnChange(e)}/>
+                <p>{input.speed}</p>
+                {/* <p>{error.speed}</p> */}
+
             <br/>
-            <div>
+            </div>
+            <div id={'datos_poke2'}>
+
+                <label>Vida: </label>
+                {/* <input type={'number'} placeholder={'Ej: 70'} name={'hp'} value={input.hp} onChange={ (e) => handleOnChange(e)}/> */}
+                <input type={'range'} min='1' max='255' name={'hp'} value={input.hp} onChange={ (e) => handleOnChange(e)}/>
+                <p>{input.hp}</p>
+                {/* <p>{error.hp}</p> */}
+ 
+            <br/>
+            
+   
                 <label>Peso: </label>
                 <label><input type={'number'} placeholder={'Ej: 23'} name={'weight'} value={input.weight} onChange={ (e) => handleOnChange(e)}/> kg </label>
                 <p>{error.weight}</p>
-            </div>
+         
             <br/>
-            <div>
+          
                 <label>Altura: </label>
                 <label><input type={'number'} placeholder={'Ej: 16'} name={'height'} value={input.height} onChange={ (e) => handleOnChange(e)}/> m </label>
                 <p>{error.height}</p>
-            </div>
+         
             <br/>
-            <div>
-                <label>Imagen: </label>
-                <label><input type={'text'} placeholder={'Ej: https://m.apkpure.com/it/pokemon-wallpaper-hd/com.khd.pokemonwallpapers'} name={'image'} value={input.image} onChange={ (e) => handleOnChange(e)}/> url </label>
-                <p>{error.image}</p>
-            </div>
-            <br/>
+           
+             </div>
             <div>
                 <label>Tipos: </label>
                 <select onChange={ (e) => handleTypes(e)}>
@@ -360,6 +365,13 @@ export default function CreatePokemon(){
                         })
                     }
                 </select>
+                {/* {
+                    tipos?.map((ty)=>{
+                        return(
+                            <button type='submit' name={ty.id} value={ty.id}>{ty.name}</button>
+                        )
+                    })
+                } */}
                 <div>
                     <div>
                         {
@@ -373,14 +385,25 @@ export default function CreatePokemon(){
                     </div>
                 </div>
                 <p>{error.types}</p>
+           
+            
+            <br/>
             </div>
+                <label>Imagen: </label>
+                <label><input type={'text'} placeholder={'Ej: https://m.apkpure.com/it/pokemon-wallpaper-hd/com.khd.pokemonwallpapers'} name={'image'} value={input.image} onChange={ (e) => handleOnChange(e)}/> url </label>
+                <img src={input.image? input.image : ""} alt=''></img>
+                <p>{error.image}</p>
+         
             <br/>
             <br/>
             <button disabled={!disEna && "disabled"} type={'submit'}>Crear Pokemon</button>
         </form>
         <br/>
+        
         <div>
             <Link to= '/home'><button>Volver</button></Link>
+        </div>
+        
         </div>
         </div>
     )
