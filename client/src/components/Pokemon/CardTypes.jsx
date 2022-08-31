@@ -21,6 +21,7 @@ export default function CardTypes({idT, nameT, input, set, validador}) {
     return (
         <div>
             <h3>{nameT}</h3>
+            <br/>
             <button onClick={(e)=> clickOnDelete(e)}>X</button>
         </div>
     )

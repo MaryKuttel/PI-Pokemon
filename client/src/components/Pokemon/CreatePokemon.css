@@ -33,18 +33,29 @@
 }
 
 #formulario{
-    background-color: rgb(15, 106, 1);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    /* background-color: rgb(15, 106, 1); */
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    grid-template-rows: 100px 200px 50px 50px;
     margin-top: 2rem;
+    margin-left: 2rem;
     height: 40rem;
     width: 80rem;
+    row-gap: 30px;
+    column-gap: 10px;
+    font-size: 1.2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* align-items: center; */
 }
 
 #datos_poke1{
-    background-color: brown;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* background-color: brown; */
     display:flex;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     height: 20rem;
@@ -54,10 +65,46 @@
 
 
 #datos_poke2{
-    background-color: rgb(255, 50, 231);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* background-color: rgb(255, 50, 231); */
     display:flex;
     align-items: center;
     flex-direction: column;
     height: 20rem;
     width: 20rem;
+}
+
+#div_tipos{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#div_imagen{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#div_imagen img{
+    width: 20rem;
+}
+
+#div_crear{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+#div_nombre{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }

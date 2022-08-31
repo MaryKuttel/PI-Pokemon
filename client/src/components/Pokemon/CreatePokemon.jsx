@@ -301,12 +301,28 @@ export default function CreatePokemon(){
         <div id={'div_interno_create'}>
             <h3>¡Crea tu Pokemon!</h3>
             <br/>
-        <form onSubmit={ e => handleSubmit(e)} id={'formulario'}>
-            <div id={'datos_poke1'}>
-                <label>Nombre: </label>
+        <form onSubmit={ e => handleSubmit(e)} id={'formulario'}> 
+        
+        <div id={'div_nombre'}>
+            <label>Nombre: </label>
                 <input type={'text'} placeholder={'Ej: chicapu'} name={'name'} value={input.name} onChange={ (e) => handleOnChange(e)}/>
                 <p>{error.name}</p>
             <br/>
+        </div>
+        
+        <div id={'div_imagen'}>
+                <label>Imagen: </label>
+                <label><input type={'text'} placeholder={'Ej: https://m.apkpure.com/it/pokemon-wallpaper-hd/com.khd.pokemonwallpapers'} name={'image'} value={input.image} onChange={ (e) => handleOnChange(e)}/> url </label>
+                <br/>
+                <br/>
+                <br/>
+                <img src={input.image? input.image : "https://cdn.vox-cdn.com/thumbor/IhuPwFLVg19jF8B6rSmpy5T1-tY=/0x0:1920x1080/1400x788/filters:focal(807x387:1113x693):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/53254027/who_pokemon.0.jpg"} alt=''></img>
+                <p>{error.image}</p>
+             </div>
+            
+            
+            <div id={'datos_poke1'}>
+               
                 <label>Ataque: </label>
                 {/* <input type={'number'} placeholder={'Ej: 40'} name={'attack'} value={input.attack} onChange={ (e) => handleOnChange(e)}/> */}
                 <input type={'range'} min='1' max='255' name={'attack'} value={input.attack} onChange={ (e) => handleOnChange(e)}/>
@@ -354,7 +370,7 @@ export default function CreatePokemon(){
             <br/>
            
              </div>
-            <div>
+            <div id={'div_tipos'}>
                 <label>Tipos: </label>
                 <select onChange={ (e) => handleTypes(e)}>
                     {
@@ -372,7 +388,6 @@ export default function CreatePokemon(){
                         )
                     })
                 } */}
-                <div>
                     <div>
                         {
                         input.types?.map(curr => {
@@ -383,20 +398,17 @@ export default function CreatePokemon(){
                         
                         }
                     </div>
-                </div>
+
                 <p>{error.types}</p>
            
             
             <br/>
             </div>
-                <label>Imagen: </label>
-                <label><input type={'text'} placeholder={'Ej: https://m.apkpure.com/it/pokemon-wallpaper-hd/com.khd.pokemonwallpapers'} name={'image'} value={input.image} onChange={ (e) => handleOnChange(e)}/> url </label>
-                <img src={input.image? input.image : ""} alt=''></img>
-                <p>{error.image}</p>
-         
+        <br/>
             <br/>
-            <br/>
+            <div id={'div_crear'}>
             <button disabled={!disEna && "disabled"} type={'submit'}>Crear Pokemon</button>
+        </div>
         </form>
         <br/>
         
