@@ -8,7 +8,7 @@ let aux2 = "black-white";
 
 const getPokemonsApi = async ()=>{
     
-    let pokeApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40")
+    let pokeApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
                     .then(response => response.data.results)
     let urlPoke = pokeApi.map(curr => curr.url)
     let truePokeApi = await axios.all(urlPoke.map( async (url) =>{
@@ -75,6 +75,7 @@ const allPokepos = async ()=>{
                 name: curr.name,
                 image: curr.image,
                 attack: curr.attack,
+                hp: curr.hp,
                 types: curr.types
             }
         })
@@ -86,6 +87,7 @@ const allPokepos = async ()=>{
                 name: curr.name,
                 image: curr.image,
                 attack: curr.attack,
+                hp: curr.hp,
                 types: curr.types
             }
         })
@@ -130,6 +132,7 @@ const subirPoke = async (name, height, weight, hp, attack, defense, speed, image
         name: traer.name,
         image: traer.image,
         attack: traer.attack,
+        hp: traer.hp,
         types: traer.types
     }
 

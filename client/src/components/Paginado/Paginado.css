@@ -91,13 +91,14 @@
 
 #nextB{
 
-  display: flex;
+  /* display: flex; */
   font-size: 10px;
   text-transform: uppercase;
-  width: 3rem;
+  width: 4rem;
   height: 1.5rem;
   margin-top: 0.5rem;
   cursor: pointer;
+  border-radius: 1rem;
 
 }
 
@@ -118,13 +119,22 @@
 
 }
 
-#prevB img{
+/* #prevB img{
   width: 3rem;
   height: 2rem;
   border-radius: 1rem;
-}
+} */
 
 #textP{
+  display: flex;
+  color:rgb(255, 255, 255);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.893);
+  /* margin-left: 47rem; */
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+#textN{
   display: flex;
   color:rgb(255, 255, 255);
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.893);

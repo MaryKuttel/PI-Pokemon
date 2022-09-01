@@ -108,3 +108,19 @@
     grid-row-start: 1;
     grid-row-end: 2;
 }
+
+#div_interno_create h4{
+    color: rgb(255, 255, 255);
+    margin-top: 2rem;
+    font-size: 1rem;
+    margin-bottom: -1.6rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-variant:small-caps;
+    display: grid;
+        grid-template-columns: repeat(2, 0fr);
+        grid-template-rows: repeat(1, 0fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        position: relative;
+        top: -1.8rem;
+}

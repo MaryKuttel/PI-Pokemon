@@ -9,7 +9,8 @@ export const CREATE_POKEMON = 'CREATE_POKEMON';
 export const GET_TYPES = 'GET_TYPES';
 export const ORDER_AZ = 'ORDER_AZ';
 export const FILTER_API_DB = 'FILTER_API_DB';
-export const RESET_DETAIL = 'RESET_DETAIL'
+export const RESET_DETAIL = 'RESET_DETAIL';
+export const FILTER_VIDA = 'FILTER_VIDA'
 
 
 
@@ -108,6 +109,13 @@ export function resetDetail(){
     return{
         type: 'RESET_DETAIL',
         payload: []
+    }
+}
+
+export function filterVida(payload){
+    return{
+        type: "FILTER_VIDA",
+        payload
     }
 }
 // export function stablePage(payload){

@@ -1,4 +1,4 @@
-import { FILTER_TYPES, GET_POKEMONS, POKE_DETAIL, POKE_NAME, FILTER_ATTACK, CREATE_POKEMON, GET_TYPES, ORDER_AZ, FILTER_API_DB, RESET_DETAIL } from "../actions"
+import { FILTER_TYPES, GET_POKEMONS, POKE_DETAIL, POKE_NAME, FILTER_ATTACK, CREATE_POKEMON, GET_TYPES, ORDER_AZ, FILTER_API_DB, RESET_DETAIL, FILTER_VIDA } from "../actions"
 
 const initialState = {
     pokemons: [],
@@ -112,6 +112,19 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 pokeDet: action.payload
+            }
+        case FILTER_VIDA:
+            let pokeVida = [...state.allPokemons]
+            let pokeVid50 = pokeVida.filter((curr) => { 
+                console.log(curr)
+                if(curr.hp <= 50){
+                   
+                    return curr
+                }
+            })
+                return{
+                    ...state,
+                    pokemons: action.payload === 'All'? pokeVida : pokeVid50
             }
         default:
             return state

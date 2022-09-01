@@ -388,7 +388,7 @@ export default function CreatePokemon(){
                         )
                     })
                 } */}
-                    <div>
+                   
                         {
                         input.types?.map(curr => {
                             return(
@@ -397,7 +397,7 @@ export default function CreatePokemon(){
                         })
                         
                         }
-                    </div>
+                   
 
                 <p>{error.types}</p>
            

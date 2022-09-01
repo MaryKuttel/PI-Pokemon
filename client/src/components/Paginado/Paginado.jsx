@@ -21,36 +21,35 @@ export default function Paginado({pokePage, allPokes}){
     }
     
     // Estableciendo paginado bonito
-    //((numPage.length - 1) - 2) --> ultimo medio
 
-    // let indexMedPage = numPage.indexOf(page)
+    let indexMedPage = numPage.indexOf(page)
 
-    // let newPages = 0
+    let newPages = 0
 
-    // if(indexMedPage === 0 || indexMedPage === 1){
+    if(indexMedPage === 0 || indexMedPage === 1){
 
-    //     newPages = numPage.slice(0, 5)
+        newPages = numPage.slice(0, 5)
 
-    // }else if(indexMedPage === (total - 2) || indexMedPage === (total - 1)){
+    }else if(indexMedPage === (total - 2) || indexMedPage === (total - 1)){
 
-    //     newPages = numPage.slice(total - 5, total)
+        newPages = numPage.slice(total - 5, total)
 
-    // }else{
+    }else{
     
-    //     let separDes = indexMedPage + 3
-    //     let separAnt = indexMedPage - 2
+        let separDes = indexMedPage + 3
+        let separAnt = indexMedPage - 2
     
-    //     newPages = numPage.slice(separAnt, separDes)
-    // }
+        newPages = numPage.slice(separAnt, separDes)
+    }
 
     return(
     <div id={'pag_div_externo'}>
             <div id={'pag_div_botones'}>
             {/* <ul id={'paginado'}> */}
                 
-                    <button id={'prevB'} onClick={(e) => dispatch(setCurrentPage(page - 1))} disabled={page === 1? true: false}><img src={img1} alt="" /></button>
-
-                {numPage && numPage.map(number => (
+                    {/* <button id={'prevB'} onClick={(e) => dispatch(setCurrentPage(page - 1))} disabled={page === 1? true: false}><img src={img1} alt="" /></button> */}
+                    <button id={'prevB'} onClick={(e) => dispatch(setCurrentPage(page - 1))} disabled={page === 1? true: false}>Prev</button>
+                {newPages && newPages.map(number => (
 
                     <button id={page === number? 'selected' : 'buttonP'} onClick={()=> dispatch(setCurrentPage(number))}>{number}</button>
                 

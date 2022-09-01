@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { Link } from "react-router-dom";
-import { getPokemons, typeFilter, filterAtta, orderAZ, creApiFilt, getTypes, setCurrentPage } from "../../actions";
+import { getPokemons, typeFilter, filterAtta, orderAZ, creApiFilt, getTypes, setCurrentPage, filterVida } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../NavBar/SearchBar";
 import Paginado from "../Paginado/Paginado";
@@ -112,6 +112,11 @@ export default function Home(){
         dispatch(setCurrentPage(1))
     }
 
+    function handleVida(e){
+        dispatch(filterVida(e.target.value))
+        dispatch(setCurrentPage(1))
+    }
+
     return loader? <Loading/> : (
         <>
         <div id={'home'}>
@@ -174,6 +179,10 @@ export default function Home(){
                 
             </select> 
                 </div>
+            <select onChange={(e)=> handleVida(e)}>
+                <option value='All'>Todos</option>
+                <option  value='vida50'>Vida Menor o igual a 50</option>
+            </select>
             </div>
             <br/>
             <br/>
