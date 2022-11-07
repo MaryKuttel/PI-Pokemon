@@ -100,6 +100,4 @@ router.get("/types", async (req, res, next)=>{
     }
 })
 
-
-getTypes()
 module.exports = router;
