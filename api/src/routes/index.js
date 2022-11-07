@@ -84,9 +84,6 @@ router.get("/pokemons/:id", async (req, res, next)=>{
 
 
 
-
-
-
 router.get("/types", async (req, res, next)=>{
     try {
 
