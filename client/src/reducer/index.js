@@ -8,7 +8,7 @@ const initialState = {
     loader: true,
     currPage: 1
 }
-
+//Ulises estuvo aquí
 
 function rootReducer(state = initialState, action){
     switch(action.type){
