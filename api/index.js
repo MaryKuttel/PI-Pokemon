@@ -20,11 +20,11 @@
 const server = require('./src/app.js');
 const { getTypes } = require('./src/controlers/getTypes.js');
 const { conn } = require('./src/db.js');
-const PORT = process.env.PGPORT || 3001
+const PORT = 3001
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
-  server.listen(PORT, async () => {
+  server.listen(process.env.PGPORT || PORT, async () => {
     await getTypes()
     console.log(`%s listening at ${PORT} && ${process.env.DATABASE_URL}`); // eslint-disable-line no-console
   });
