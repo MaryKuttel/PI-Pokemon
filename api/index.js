@@ -26,6 +26,6 @@ const PORT = 3001
 conn.sync({ force: false }).then(() => {
   server.listen(process.env.PGPORT || PORT, async () => {
     await getTypes()
-    console.log(`%s listening at ${PORT} && ${process.env.DATABASE_URL}`); // eslint-disable-line no-console
+    console.log(`%s listening at ${process.env.PGPORT || PORT} && ${process.env.DATABASE_URL}`); // eslint-disable-line no-console
   });
 });
