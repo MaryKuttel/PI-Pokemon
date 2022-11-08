@@ -5,8 +5,9 @@ import App from './App';
 import {Provider}  from 'react-redux';
 import {store} from './store'
 import { BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
 
-
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 ReactDOM.render(
   <Provider store={store}>

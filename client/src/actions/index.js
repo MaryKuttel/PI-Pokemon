@@ -17,7 +17,7 @@ export const FILTER_VIDA = 'FILTER_VIDA'
 
 export function getPokemons(){
     return async function(dispatch){
-        const pokeAll = await axios.get('http://localhost:3001/pokemons')
+        const pokeAll = await axios.get('/pokemons')
         return dispatch({
             type: 'GET_POKEMONS',
             payload: pokeAll.data
@@ -28,7 +28,7 @@ export function getPokemons(){
 
 export function getDetailsPoke(id){
     return async function(dispatch){
-        const pokeDetail = await axios.get(`http://localhost:3001/pokemons/${id}`)
+        const pokeDetail = await axios.get(`/pokemons/${id}`)
         return dispatch({
             type: 'POKE_DETAIL',
             payload: pokeDetail.data
@@ -38,7 +38,7 @@ export function getDetailsPoke(id){
 
 export function getPokeName(name){
     return async function(dispatch){
-        const pokeName = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+        const pokeName = await axios.get(`/pokemons?name=${name}`)
         return dispatch({
             type: 'POKE_NAME',
             payload: pokeName.data
@@ -49,7 +49,7 @@ export function getPokeName(name){
 
 export function createPoke(pokeCrear){
     return async function(dispatch){
-        const crearPoke = await axios.post('http://localhost:3001/pokemons', pokeCrear)
+        const crearPoke = await axios.post('/pokemons', pokeCrear)
         return dispatch({
             type: 'CREATE_POKEMON',
             payload: crearPoke.data
@@ -59,7 +59,7 @@ export function createPoke(pokeCrear){
 
 export function getTypes(){
     return async function(dispatch){
-        const pokeTypes = await axios.get('http://localhost:3001/types');
+        const pokeTypes = await axios.get('/types');
         return dispatch({
             type: 'GET_TYPES',
             payload: pokeTypes.data
