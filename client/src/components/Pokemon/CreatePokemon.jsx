@@ -255,7 +255,7 @@ export default function CreatePokemon(){
             }
     
         }else{
-            let arrImage = ['https://static3.srcdn.com/wordpress/wp-content/uploads/2021/08/Pok--mon-Fakemon-Tofrug.jpg', 'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/186240451/original/9251d84e9bb6b767fde90d5edae11beebee55778.png', 'http://pre03.deviantart.net/133d/th/pre/i/2014/109/8/f/_____incikhtes_by_smiley_fakemon-d7f4mv8.png','https://acortar.link/OlryH1', 'https://acortar.link/iPjII6']
+            let arrImage = ['https://static3.srcdn.com/wordpress/wp-content/uploads/2021/08/Pok--mon-Fakemon-Tofrug.jpg', 'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/186240451/original/9251d84e9bb6b767fde90d5edae11beebee55778.png', 'http://pre03.deviantart.net/133d/th/pre/i/2014/109/8/f/_____incikhtes_by_smiley_fakemon-d7f4mv8.png', 'https://e7.pngegg.com/pngimages/903/707/png-clipart-smiley-insect-smiley-miscellaneous-smiley.png','https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f41a008-c917-4bb7-9c1f-d4f97b89670f/d7vu3mz-3607dfa6-2cb6-429c-ba5c-14524a3ab2fb.jpg/v1/fill/w_1024,h_993,q_75,strp/manticora_fakemon_by_fer_gon_d7vu3mz-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTkzIiwicGF0aCI6IlwvZlwvNWY0MWEwMDgtYzkxNy00YmI3LTljMWYtZDRmOTdiODk2NzBmXC9kN3Z1M216LTM2MDdkZmE2LTJjYjYtNDI5Yy1iYTVjLTE0NTI0YTNhYjJmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.9yFUn36xP4sm_pMLmPluqRXKvMgpQJkOzbaZ-168rhM']
 
             let setIndex = Math.round(Math.random() * 4)
 
@@ -411,13 +411,21 @@ export default function CreatePokemon(){
         <br/>
             <br/>
             <div id={'div_crear'}>
-            <button disabled={!disEna && "disabled"} type={'submit'}>Crear Pokemon</button>
+            <button disabled={!disEna && "disabled"} type={'submit'}><svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#FFFFFF" height="24" width="24" viewBox="0 0 24 24">
+        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+    </svg>Crear Pokemon</button>
+        {
+    !disEna? <p>Boton deshabilitado. Revise todos los campos</p> : <p></p>
+    }
         </div>
         </form>
         <br/>
         
-        <div>
-            <Link to= '/home'><button>Volver</button></Link>
+        <div id={'volver'}>
+            <Link to= '/home'><button>
+  <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+  <span>Volver</span>
+</button></Link>
         </div>
         
         </div>

@@ -22,10 +22,41 @@
 
 #navBar_text{
 
-    text-transform: capitalize;
-    font-size: 1.2rem;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: capitalize;
+    font-size: 1.2rem; */
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
 
 }
+
+#navBar_text button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-image: linear-gradient(to top, #21ca62 0%, #1d0867 100%);
+    border: solid 3px transparent;
+    background-clip: padding-box;
+    box-shadow: 0px 0px 0px 3px #ffffff00;
+    color: white;
+    min-height: 43px;
+    padding: 0 13px 0 13px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .5s ease;
+  }
+  
+  #navBar_text button:active {
+    transform: scale(.9);
+    transition: all 100ms ease;
+  }
+  
+  #navBar_text button:hover {
+    box-shadow: 0px 0px 0px 3px #29a76d;
+  }
+  
+  #navBar_text button svg {
+    width: 16px;
+  }
