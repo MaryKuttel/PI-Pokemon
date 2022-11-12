@@ -45,19 +45,17 @@ export default function Paginado({pokePage, allPokes}){
     return(
     <div id={'pag_div_externo'}>
             <div id={'pag_div_botones'}>
-            {/* <ul id={'paginado'}> */}
-                
-                    {/* <button id={'prevB'} onClick={(e) => dispatch(setCurrentPage(page - 1))} disabled={page === 1? true: false}><img src={img1} alt="" /></button> */}
+
                     <button id={'prevB'} onClick={(e) => dispatch(setCurrentPage(page - 1))} disabled={page === 1? true: false}>Prev</button>
                 {newPages && newPages.map(number => (
 
                     <button id={page === number? 'selected' : 'buttonP'} onClick={()=> dispatch(setCurrentPage(number))}>{number}</button>
+                    
                 
                 ))}
 
                     <button id={'nextB'} onClick={(e) => dispatch(setCurrentPage(page + 1))} disabled={page === total? true: false}>Next</button>
             
-            {/* </ul> */}
             </div>
     </div>
 

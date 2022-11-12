@@ -235,18 +235,18 @@ export default function CreatePokemon(){
             validError.height = '¿Ta chiquito o ta grandecito?'
         }else{
             if(pokeValidar.height > 40){
-                validError.height = "Woooow espera espera ¿qué tratas de crear?"
+                validError.height = "Woooow espera espera ¿qué tratas de crear? La altura no puede superar los 40 metros!"
             } else if(pokeValidar.height < 1){
-                validError.height = '¿Absorbido por un agujero negro o carencia de existencia?'
+                validError.height = '¿Absorbido por un agujero negro o carencia de existencia? ¿En serio?'
             }
         }
         if(!pokeValidar.weight){
             validError.weight = '¡Un pokemon pesaba 1000kg! ¿Y el tuyo?'
         }else{
             if(pokeValidar.weight > 1000){
-                validError.weight = "¡¿Queriendo generar competencia?! Nao nao, menos peso más altura"
+                validError.weight = "¡¿Queriendo generar competencia?! Nao nao, menos peso más altura. El peso no puede ser superior a 1000"
             } else if(pokeValidar.weight < 1){
-                validError.weight = '¿Absorbido por un agujero negro o carencia de existencia?'
+                validError.weight = '¿Absorbido por un agujero negro o carencia de existencia? ¿En serio?'
             }
         }
         if(pokeValidar.image){
@@ -260,6 +260,7 @@ export default function CreatePokemon(){
             let setIndex = Math.round(Math.random() * 4)
 
             pokeValidar.image = arrImage[setIndex]
+            setInput({...input, image: pokeValidar.image})
 
         }
         if(pokeValidar.types.length === 0 || pokeValidar.types.length > 2){
@@ -318,6 +319,9 @@ export default function CreatePokemon(){
                 <br/>
                 <img src={input.image? input.image : "https://cdn.vox-cdn.com/thumbor/IhuPwFLVg19jF8B6rSmpy5T1-tY=/0x0:1920x1080/1400x788/filters:focal(807x387:1113x693):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/53254027/who_pokemon.0.jpg"} alt=''></img>
                 <p>{error.image}</p>
+                {
+                    input.image? <p>Este es un Pokemon de ejemplo</p> : <p>¿Quién es ese pokemon?</p>
+                }
              </div>
             
             
