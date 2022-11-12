@@ -37,11 +37,11 @@ export default function PokemonDetail(){
                 <div id={'pokedex_altura'}>
                     <h3>Altura: {pokeDetID.height}</h3>
                 </div>
-                <div id={'pokedex_peso'}>
-                    <h3>Peso: {pokeDetID.weight}</h3>
-                </div>
                 <div id={'pokedex_vida'}>
                     <h3>Vida: {pokeDetID.hp}</h3>
+                </div>
+                <div id={'pokedex_peso'}>
+                    <h3>Peso: {pokeDetID.weight}</h3>
                 </div>
                 <div id={'pokedex_ataque'}>
                     <h3>Ataque: {pokeDetID.attack}</h3>
