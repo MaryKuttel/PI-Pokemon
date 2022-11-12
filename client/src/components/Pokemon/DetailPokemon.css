@@ -76,12 +76,13 @@
 #pokedex_peso{
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    display: flex;
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 33rem;
+    margin-top: 25rem;
     margin-left: -9.3rem;
     font-size: 0.5cm;
     color: rgba(34, 10, 78, 0.795);
@@ -104,13 +105,12 @@
 #pokedex_vida{
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 25rem;
+    margin-top: 33rem;
     margin-left: -9.3rem;
     font-size: 0.5cm;
     color: rgba(34, 10, 78, 0.795);
